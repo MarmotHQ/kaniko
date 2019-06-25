@@ -26,13 +26,13 @@ import (
 	"github.com/GoogleContainerTools/kaniko/pkg/util"
 )
 
-// url unifies calls to download and unpack the build context.
-type Url struct {
+// URL unifies calls to download and unpack the build context.
+type URL struct {
 	context string
 }
 
 // UnpackTarFromBuildContext download and untar a file from s3
-func (u *Url) UnpackTarFromBuildContext() (string, error) {
+func (u *URL) UnpackTarFromBuildContext() (string, error) {
 	directory := constants.BuildContextDir
 	tarPath := filepath.Join(directory, constants.ContextTar)
 	if err := os.MkdirAll(directory, 0750); err != nil {
