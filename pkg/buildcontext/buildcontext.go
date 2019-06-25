@@ -35,7 +35,7 @@ func GetBuildContext(srcContext string) (BuildContext, error) {
 	split := strings.SplitAfter(srcContext, "://")
 	prefix := split[0]
 	var context string
-	if(len(split) == 3) {
+	if len(split) == 3 {
 		context = split[1] + split[2]
 	} else {
 		context = split[1]
