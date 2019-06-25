@@ -44,8 +44,8 @@ func GetBuildContext(srcContext string) (BuildContext, error) {
 		return &Dir{context: context}, nil
 	case constants.GitBuildContextPrefix:
 		return &Git{context: context}, nil
-	case constants.UrlBuildContextPrefix:
-		return &Url{context: context}, nil
+	case constants.URLBuildContextPrefix:
+		return &URL{context: context}, nil
 	}
 	return nil, errors.New("unknown build context prefix provided, please use one of the following: gs://, dir://, s3://, git://, url://")
 }
