@@ -34,7 +34,12 @@ type BuildContext interface {
 func GetBuildContext(srcContext string) (BuildContext, error) {
 	split := strings.SplitAfter(srcContext, "://")
 	prefix := split[0]
-	context := split[1]
+	var context string
+	if(len(split) == 3) {
+		context = split[1] + split[2]
+	} else {
+		context = split[1]
+	}
 	switch prefix {
 	case constants.GCSBuildContextPrefix:
 		return &GCS{context: context}, nil
