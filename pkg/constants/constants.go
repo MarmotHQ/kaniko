@@ -56,6 +56,7 @@ const (
 	LocalDirBuildContextPrefix = "dir://"
 	GitBuildContextPrefix      = "git://"
 	HTTPSBuildContextPrefix    = "https://"
+	UrlBuildContextPrefix      = "url://"
 
 	HOME = "HOME"
 	// DefaultHOMEValue is the default value Docker sets for $HOME
